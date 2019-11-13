@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css?family=VT323|Roboto+Black|Open+Sans');
+
+body
+{
+	background: black;
+	color:#dfe6e9;
+	text-align: left;
+	font-family: "Roboto";
+	font-size: 30px;
+}
+#streamCanvas
+{
+	position: absolute;
+	width: 100%;
+	height:100%;
+	top: 0;
+	left:0;
+	background:#dfe6e9;
+	overflow:hidden;
+
+	animation: fadeIn 0.5s 0.5s backwards;
+}
+#nowPlayingVideo
+{
+	width: 70%;
+	height:100%;
+	position: absolute;
+	left: 30%;
+	top:0px;
+	z-index: 100;
+
+	min-width: 100%;
+    min-height: 100%;
+	object-fit:cover;
+	object-position: center center;
+}
+.mainSidebar
+{
+	position: absolute;
+	left:0px;
+	top:0px;
+	z-index: 1000;
+
+	width: 30%;
+	height:100%;
+	background:#dfe6e9;
+	background-image: url("img/eberhard-grossgasteiger-S-2Ukb_VqpA-unsplash.jpg");
+	background-size: cover;
+	background-position: center center;
+
+	display: flex;
+	flex-direction: column-reverse;
+}
+.sidebarContent
+{
+	font-size: 1.5vw;
+	width:80%;
+	margin: 0 5% 3%;
+	padding: 4% 5%;
+	border-radius:0.5vw;
+	background:#2c3e50;
+}
+.sidebarHighlight
+{
+	color:#2ecc71;
+}
+#breakCanvas
+{
+	position: absolute;
+	width: 100%;
+	height:100%;
+	top: 0;
+	left:0;
+	overflow:hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-family: "Roboto Black";
+	font-size:3vw;
+
+	background:#dfe6e9;
+	background-image: url("img/eberhard-grossgasteiger-S-2Ukb_VqpA-unsplash.jpg");
+	background-size: cover;
+	background-position: center center;
+
+	animation: fadeIn 0.5s 0.5s backwards;
+}
+.breakContainer
+{
+	background:#2c3e50;
+	padding: 2.5vw;
+	border-radius:1vw;
+}
+.breakPadding
+{
+	padding-right: 5vw;
+}
+#alertTest
+{
+	position: absolute;
+	width: 100%;
+	height:100%;
+	left:0px;
+	top:0px;
+	background-image: url("img/eberhard-grossgasteiger-S-2Ukb_VqpA-unsplash.jpg");
+	background-size: cover;
+	background-position: center center;
+}
+.alertCanvas
+{
+	color:#dfe6e9;
+	text-align: left;
+	font-family: Roboto;
+	font-size: 24px;
+	display: inline-block;
+}
+.alertContainer
+{
+	border-radius: 10px;
+	background:#2c3e50;
+	overflow: hidden;
+	display:flex;
+	flex-direction: row;
+	margin: 20px;
+	box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
+
+	animation: scaleIn 0.5s 0.5s backwards, scaleOut 0.5s 6.2s forwards;
+}
+.alertEmoteContainer
+{
+	width: 120px;
+	background: #2ecc71;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.alertEmote
+{
+	animation: emoteScale 0.5s infinite alternate;
+}
+.alertTextContainer
+{
+	padding: 20px;
+	padding-right: 40px;
+}
+.alertTextUser
+{
+	font-weight: bold;
+	margin-bottom: 5px;
+
+	animation: fadeInRight 0.5s 1s backwards, fadeOutLeft 0.5s 6s forwards;
+}
+.alertTextMessage
+{
+	font-size:0.6em;
+
+	animation: fadeInRight 0.5s 1.1s backwards, fadeOutLeft 0.5s 6.1s forwards;
+}
+
+@keyframes fadeIn
+{
+    from
+	{
+		filter:opacity(0);
+	}
+	to
+	{
+		filter:opacity(1);
+	}
+}
+@keyframes emoteScale
+{
+	from
+	{
+		transform:scale(1,1);
+	}
+	to
+	{
+		transform:scale(0.9,0.9);
+	}
+}
+@keyframes scaleIn
+{
+    from
+	{
+		filter:opacity(0);
+		transform:scale(0.9,0.9);
+	}
+	to
+	{
+		filter:opacity(1);
+		transform:scale(1,1);
+	}
+}
+@keyframes scaleOut
+{
+    from
+	{
+		filter:opacity(1);
+		transform:scale(1,1);
+	}
+	to
+	{
+		filter:opacity(0);
+		transform:scale(0.9,0.9);
+	}
+}
+@keyframes fadeInRight
+{
+    from
+	{
+		transform: translateX(-5px);
+		filter:opacity(0);
+	}
+	to
+	{
+		filter:opacity(1);
+	}
+}
+@keyframes fadeOutLeft
+{
+    from
+	{
+		filter:opacity(1);
+		
+	}
+	to
+	{
+		transform: translateX(-5px);
+		filter:opacity(0);
+	}
